@@ -1,7 +1,11 @@
 --- templates/tiki-upload_file.tpl	2009-11-12 22:06:27.000000000 -0200
-+++ templates/tiki-upload_file.tpl	2010-03-21 17:36:01.000000000 -0300
-@@ -167,7 +167,6 @@
- 				<label for="galleryId">{tr}File gallery:{/tr}</label>
++++ templates/tiki-upload_file.tpl	2010-03-21 17:42:33.000000000 -0300
+@@ -164,10 +164,9 @@
+ 				<input type="hidden" name="galleryId" value="{$prefs.fgal_root_id}"/>
+ 			{elseif empty($groupforalert)}
+ 			<tr><td>
+-				<label for="galleryId">{tr}File gallery:{/tr}</label>
++				<label for="galleryId">Selecionar área:</label>
  			</td><td width="80%">
  				<select id="galleryId" name="galleryId[]">
 -					<option value="{$prefs.fgal_root_id}" {if $prefs.fgal_root_id eq $galleryId}selected="selected"{/if} style="font-style:italic; border-bottom:1px dashed #666;">{tr}File Galleries{/tr}</option>
