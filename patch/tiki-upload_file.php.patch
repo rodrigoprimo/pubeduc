@@ -1,0 +1,20 @@
+--- tiki-upload_file.php	2010-02-23 19:33:34.000000000 -0300
++++ tiki-upload_file.php	2010-03-20 14:40:44.000000000 -0300
+@@ -394,14 +394,14 @@
+ 	}
+ 	$temp_max = count($galleries["data"]);
+ 	for ($i = 0; $i < $temp_max; $i++) {
+-		if ($userlib->object_has_one_permission($galleries["data"][$i]["galleryId"], 'file gallery')) {
++		if ($userlib->object_has_one_permission($galleries["data"][$i]["id"], 'file gallery')) {
+ 			$galleries["data"][$i]["individual"] = 'y';
+-			if ($userlib->object_has_permission($user, $galleries["data"][$i]["galleryId"], 'file gallery', 'tiki_p_upload_files')) {
++			if ($userlib->object_has_permission($user, $galleries["data"][$i]["id"], 'file gallery', 'tiki_p_upload_files')) {
+ 				$galleries["data"][$i]["individual_tiki_p_upload_files"] = 'y';
+ 			} else {
+ 				$galleries["data"][$i]["individual_tiki_p_upload_files"] = 'n';
+ 			}
+-			if ($tiki_p_admin == 'y' || $userlib->object_has_permission($user, $galleries["data"][$i]["galleryId"], 'file gallery', 'tiki_p_admin_file_galleries')) {
++			if ($tiki_p_admin == 'y' || $userlib->object_has_permission($user, $galleries["data"][$i]["id"], 'file gallery', 'tiki_p_admin_file_galleries')) {
+ 				$galleries["data"][$i]["individual_tiki_p_upload_files"] = 'y';
+ 			}
+ 		} else {
