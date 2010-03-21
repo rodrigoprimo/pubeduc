@@ -1,0 +1,25 @@
+--- templates/tiki-upload_file.tpl	2009-11-12 22:06:27.000000000 -0200
++++ templates/tiki-upload_file.tpl	2010-03-21 17:36:01.000000000 -0300
+@@ -167,7 +167,6 @@
+ 				<label for="galleryId">{tr}File gallery:{/tr}</label>
+ 			</td><td width="80%">
+ 				<select id="galleryId" name="galleryId[]">
+-					<option value="{$prefs.fgal_root_id}" {if $prefs.fgal_root_id eq $galleryId}selected="selected"{/if} style="font-style:italic; border-bottom:1px dashed #666;">{tr}File Galleries{/tr}</option>
+ 				{section name=idx loop=$galleries}
+ 					{if $galleries[idx].id neq $prefs.fgal_root_id and
+ 						( ($galleries[idx].individual eq 'n') or ($galleries[idx].individual_tiki_p_upload_files eq 'y') )
+@@ -284,12 +283,12 @@
+ 	<span class="attention">{tr}The file is locked by {$fileInfo.lockedby}{/tr}</span>
+ {/if}
+ <br />
+-{remarksbox type="note"}
++{*{remarksbox type="note"}
+ 	{tr}Maximum file size is around:{/tr}
+ 	{if $tiki_p_admin eq 'y'}<a title="{$max_upload_size_comment}">{/if}
+ 		{$max_upload_size|kbsize:true:0}
+ 	{if $tiki_p_admin eq 'y'}</a>{/if}
+-{/remarksbox}
++{/remarksbox}*}
+ 
+ </div>
+ 
