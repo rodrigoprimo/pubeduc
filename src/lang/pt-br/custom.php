@@ -157,6 +157,7 @@ $lang_custom = array(
 "Permission denied you can upload images but not to this gallery" => "Permissão negada: você pode carregar imagens mas não neste acervo",
 "File title" => "Nome",
 "Filename" => "Nome",
+"Actions" => "A&ccedil;&otilde;es",
 );
 
 $lang = array_merge($lang, $lang_custom);
