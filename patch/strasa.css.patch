@@ -1,0 +1,15 @@
+--- styles/strasa.css	2010-03-18 11:44:20.000000000 -0300
++++ styles/strasa.css	2010-03-23 16:43:36.000000000 -0300
+@@ -65,9 +65,9 @@
+ 	font-size: 1.05em;
+ }
+ 
+-.wikitext h1 {color: #000000}
+-.wikitext h2 {color: #309FC0; line-height: .9; border-bottom: solid 1px #3090C0; text-transform: uppercase}
+-.wikitext h3 {color: #303030; line-height: .8em; font-style: italic}
++.wikitext h1 {color: #000000; line-height: 26px;}
++.wikitext h2 {color: #309FC0; line-height: 24px; border-bottom: solid 1px #3090C0; text-transform: uppercase}
++.wikitext h3 {color: #303030; line-height: 22px; font-style: italic}
+ .wikitext h4 {border-bottom: dashed 1px #CCF0FF; color: #3F3F3F}
+ .wikitext h5 {color: #6F6F6F; font-style: italic}
+ .wikitext h6 {color: #909090}

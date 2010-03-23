@@ -1355,24 +1355,24 @@ INSERT INTO `tiki_file_galleries` (`galleryId`, `name`, `type`, `description`, `
 (1, 'File Galleries', 'system', '', NULL, 'y', 1269022126, 'admin', NULL, NULL, NULL, 0, 'y', 'n', 'n', 'f', 'n', 'n', 0, 'n', 'n', -1, 'n', 'n', -1, 'name_asc', 'n', 'n', 'n', NULL, 'n', 'n', 'y', 'n', 'y', NULL, 'list', 0, NULL, NULL),
 (4, 'SEE', 'default', '', 1268851517, 'y', 1269022608, 'admin', 8, NULL, NULL, 50, 'y', 'n', 'n', 'f', 'n', 'n', 1024, 'n', 'n', 1, 'n', 'n', -1, 'name_asc', 'n', 'n', 'n', NULL, 'n', 'n', 'y', 'n', 'y', NULL, 'list', 0, NULL, NULL),
 (5, 'Arte', 'default', '', 1268851549, 'y', 1268932102, 'admin', 1, NULL, NULL, 50, 'y', 'n', 'y', 'f', 'y', 'n', 1024, 'y', 'n', 4, 'n', 'n', -1, 'name_asc', 'n', 'n', 'y', NULL, 'n', 'n', 'n', 'n', 'y', NULL, 'list', 0, NULL, NULL),
-(7, 'EducaÃ§Ã£o fÃ­sica', 'default', '', 1268851582, 'y', 1268851582, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
-(8, 'CiÃªncias', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
-(9, 'MatemÃ¡tica', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
-(10, 'HistÃ³ria', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
+(7, 'Educação física', 'default', '', 1268851582, 'y', 1268851582, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
+(8, 'Ciências', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
+(9, 'Matemática', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
+(10, 'História', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
 (11, 'Geografia', 'default', '', 1268851674, 'y', 1268851674, 'admin', 1, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
-(12, 'LÃ­ngua portuguesa', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
-(13, 'LÃ­ngua estrangeira', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
+(12, 'Língua portuguesa', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
+(13, 'Língua estrangeira', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
 (14, 'Biologia', 'default', '', 1268851674, 'y', 1268853098, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
 (15, 'Quimica', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
-(16, 'FÃ­sica', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
+(16, 'Física', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
 (17, 'Filosofia', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
 (18, 'Sociologia', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
-(19, 'NÃºcleo bÃ¡sico', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
-(20, 'EducaÃ§Ã£o especial', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
-(21, 'SMESP', 'default', 'Secretaria Municipal de EducaÃ§Ã£o, Cadernos de Apoio e Aprendizagem.', 1268934641, 'y', 1268947962, 'admin', 27, NULL, NULL, 50, 'n', 'n', 'n', 'f', NULL, 'n', 1024, 'y', 'n', 1, 'n', 'n', -1, NULL, 'n', 'y', 'n', NULL, 'n', 'n', 'n', 'n', 'y', NULL, 'list', 0, NULL, NULL),
+(19, 'Núcleo básico', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
+(20, 'Educação especial', 'default', '', 1268851674, 'y', 1268851674, 'admin', 0, NULL, NULL, 50, 'y', 'n', 'y', 'f', NULL, 'o', 1024, 'o', 'n', 4, 'n', 'n', -1, NULL, 'n', 'n', 'o', NULL, 'n', 'n', 'n', 'y', 'y', NULL, 'list', 0, NULL, NULL),
+(21, 'SMESP', 'default', 'Secretaria Municipal de Educação, Cadernos de Apoio e Aprendizagem.', 1268934641, 'y', 1268947962, 'admin', 27, NULL, NULL, 50, 'n', 'n', 'n', 'f', NULL, 'n', 1024, 'y', 'n', 1, 'n', 'n', -1, NULL, 'n', 'y', 'n', NULL, 'n', 'n', 'n', 'n', 'y', NULL, 'list', 0, NULL, NULL),
 (22, 'CPS', 'default', 'Centro Paula Souza', 1268947850, 'y', 1268947850, 'carlosseabra@tvcultura.com.br', 1, NULL, NULL, 50, 'y', 'n', 'n', 'f', NULL, 'n', 1024, 'y', 'n', 1, 'n', 'n', -1, NULL, 'n', 'y', 'n', NULL, 'n', 'n', 'n', 'n', 'y', NULL, 'list', 0, NULL, NULL),
-(23, 'MatemÃ¡tica', 'default', '', 1269010348, 'y', 1269010348, 'janainacardoso@tvcultura.com.br', 4, NULL, NULL, 50, 'y', 'n', 'n', 'f', NULL, 'n', 1024, 'y', 'n', 21, 'n', 'n', -1, NULL, 'n', 'y', 'n', NULL, 'n', 'n', 'n', 'n', 'y', NULL, 'list', 0, NULL, NULL),
-(24, 'LÃ­ngua Portuguesa', 'default', '', 1269010398, 'y', 1269012692, 'janainacardoso@tvcultura.com.br', 22, NULL, NULL, 50, 'y', 'n', 'n', 'f', NULL, 'n', 1024, 'y', 'n', 21, 'n', 'n', -1, NULL, 'n', 'y', 'n', NULL, 'n', 'n', 'n', 'n', 'y', NULL, 'list', 0, NULL, NULL);
+(23, 'Matemática', 'default', '', 1269010348, 'y', 1269010348, 'janainacardoso@tvcultura.com.br', 4, NULL, NULL, 50, 'y', 'n', 'n', 'f', NULL, 'n', 1024, 'y', 'n', 21, 'n', 'n', -1, NULL, 'n', 'y', 'n', NULL, 'n', 'n', 'n', 'n', 'y', NULL, 'list', 0, NULL, NULL),
+(24, 'Língua Portuguesa', 'default', '', 1269010398, 'y', 1269012692, 'janainacardoso@tvcultura.com.br', 22, NULL, NULL, 50, 'y', 'n', 'n', 'f', NULL, 'n', 1024, 'y', 'n', 21, 'n', 'n', -1, NULL, 'n', 'y', 'n', NULL, 'n', 'n', 'n', 'n', 'y', NULL, 'list', 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1437,7 +1437,7 @@ CREATE TABLE `tiki_files` (
 
 INSERT INTO `tiki_files` (`fileId`, `galleryId`, `name`, `description`, `created`, `filename`, `filesize`, `filetype`, `data`, `user`, `author`, `hits`, `votes`, `points`, `path`, `reference_url`, `is_reference`, `hash`, `search_data`, `lastModif`, `lastModifUser`, `lockedby`, `comment`, `archiveId`) VALUES 
 (12, 24, 'teste', 'sadf', 1269012692, 'formulariosubsidioformacaoacademica.doc', 96256, 'application/msword', '', 'janainacardoso@tvcultura.com.br', 'janainacardoso@tvcultura.com.br', 0, NULL, NULL, 'dbb71477cbb08c560da99d8e144921a0', NULL, NULL, '6b9bf90182489cdd2804e7c378a00858', '', 1269012692, 'janainacardoso@tvcultura.com.br', NULL, '', 0),
-(11, 24, 'LÃ­ngua Portuguesa ano 2', 'Arquivo para testes...', 1268947962, 'P-A1u2_copy.doc', 3282432, 'application/msword', '', 'carlosseabra@tvcultura.com.br', 'carlosseabra@tvcultura.com.br', 2, NULL, NULL, '6d8ee2ebd977c5a0ab9417accf0bcf58', NULL, NULL, 'cb3bcbd0e5a7e76fb85e114250755073', '', 1268947962, 'carlosseabra@tvcultura.com.br', NULL, '', 0);
+(11, 24, 'Língua Portuguesa ano 2', 'Arquivo para testes...', 1268947962, 'P-A1u2_copy.doc', 3282432, 'application/msword', '', 'carlosseabra@tvcultura.com.br', 'carlosseabra@tvcultura.com.br', 2, NULL, NULL, '6d8ee2ebd977c5a0ab9417accf0bcf58', NULL, NULL, 'cb3bcbd0e5a7e76fb85e114250755073', '', 1268947962, 'carlosseabra@tvcultura.com.br', NULL, '', 0);
 
 -- --------------------------------------------------------
 
@@ -3071,7 +3071,7 @@ CREATE TABLE `tiki_pages` (
 -- 
 
 INSERT INTO `tiki_pages` (`page_id`, `pageName`, `hits`, `data`, `description`, `lastModif`, `comment`, `version`, `version_minor`, `user`, `ip`, `flag`, `points`, `votes`, `cache`, `wiki_cache`, `cache_timestamp`, `pageRank`, `creator`, `page_size`, `lang`, `lockedby`, `is_html`, `created`, `wysiwyg`, `wiki_authors_style`, `comments_enabled`) VALUES 
-(1, 'HomePage', 96, '!!!Este Ã© um ambiente restrito a autores e colaboradores dos projetos de \r\n!!!&quot;PublicaÃ§Ãµes EducaÃ§Ã£o&quot; da FundaÃ§Ã£o Padre Anchieta.\r\n\r\n*__SEE - Secretaria Estadual de EducaÃ§Ã£o de SP ~~#999:(Escola de FormaÃ§Ã£o de Professores)__:~~\r\n*__SMESP - Secretaria Municipal de EducaÃ§Ã£o de S. Paulo ~~#999:(Cadernos de Apoio e Aprendizagem: LÃ­ngua Portuguesa e MatemÃ¡tica)__:~~\r\n*__SERT - Secretaria do Emprego e RelaÃ§Ãµes do Trabalho ~~#999:(ConteÃºdos Gerais, Arcos Ocupacionais, Time do Emprego e Banco do Povo)__:~~\r\n*__CPS - Centro Paula Souza ~~#999:(InformÃ¡tica, MecÃ¢nica, EletrÃ´nica e NÃºcleo BÃ¡sico)__:~~\r\n\r\n---\r\n\r\n~~#666:Em caso de dÃºvidas ou necessidade de esclarecimento, contacte as pessoas abaixo:~~\r\n\r\n||   ''''Projeto''''|   ''''ResponsÃ¡vel''''|   ''''E-mail''''|   ''''Telefone''''\r\n   __SEE__|   Izabel Perez|   izabelperez@tvcultura.com.br|   2182-3186 \r\n   __SMESP__ &amp;nbsp;|   JanaÃ­na Chervezan|   janainacardoso@tvcultura.com.br &amp;nbsp;| 2182-3215   \r\n   __SERT__|   Solange Lemos|   solangelemos@tvcultura.com.br|   2182-3215\r\n   __CPS__|   Antonio Mello|   antoniomello@tvcultura.com.br|  2366-4911 ||\r\n\r\n\r\n', '', 1269132068, '', 6, 0, 'carlosseabra@tvcultura.com.br', '201.83.72.150', '', NULL, NULL, NULL, NULL, 0, NULL, 'admin', 1027, 'en', '', 0, 1268835166, 'n', '', NULL),
+(1, 'HomePage', 96, '!!!Este é um ambiente restrito a autores e colaboradores dos projetos de \r\n!!!&quot;Publicações Educação&quot; da Fundação Padre Anchieta.\r\n\r\n*__SEE - Secretaria Estadual de Educação de SP ~~#999:(Escola de Formação de Professores)__:~~\r\n*__SMESP - Secretaria Municipal de Educação de S. Paulo ~~#999:(Cadernos de Apoio e Aprendizagem: Língua Portuguesa e Matemática)__:~~\r\n*__SERT - Secretaria do Emprego e Relações do Trabalho ~~#999:(Conteúdos Gerais, Arcos Ocupacionais, Time do Emprego e Banco do Povo)__:~~\r\n*__CPS - Centro Paula Souza ~~#999:(Informática, Mecânica, Eletrônica e Núcleo Básico)__:~~\r\n\r\n---\r\n\r\n~~#666:Em caso de dúvidas ou necessidade de esclarecimento, contacte as pessoas abaixo:~~\r\n\r\n||   ''''Projeto''''|   ''''Responsável''''|   ''''E-mail''''|   ''''Telefone''''\r\n   __SEE__|   Izabel Perez|   izabelperez@tvcultura.com.br|   2182-3186 \r\n   __SMESP__ &amp;nbsp;|   Janaína Chervezan|   janainacardoso@tvcultura.com.br &amp;nbsp;| 2182-3215   \r\n   __SERT__|   Solange Lemos|   solangelemos@tvcultura.com.br|   2182-3215\r\n   __CPS__|   Antonio Mello|   antoniomello@tvcultura.com.br|  2366-4911 ||\r\n\r\n\r\n', '', 1269132068, '', 6, 0, 'carlosseabra@tvcultura.com.br', '201.83.72.150', '', NULL, NULL, NULL, NULL, 0, NULL, 'admin', 1027, 'en', '', 0, 1268835166, 'n', '', NULL),
 (2, 'http:tiki-list_file_gallery.php', 4, '_HOMEPAGE_CONTENT_', '', 1268947413, 'Tiki initialization', 1, 0, 'admin', '0.0.0.0', '', NULL, NULL, NULL, NULL, NULL, NULL, 'admin', 18, 'en', '', 0, 1268947413, 'n', '', NULL);
 
 -- --------------------------------------------------------
@@ -3269,7 +3269,7 @@ CREATE TABLE `tiki_preferences` (
 -- 
 
 INSERT INTO `tiki_preferences` (`name`, `value`) VALUES 
-('browsertitle', 'PublicaÃ§Ãµes EducaÃ§Ã£o'),
+('browsertitle', 'Publicações Educação'),
 ('sender_email', 'carlosseabra@tvcultura.com.br'),
 ('https_login', 'disabled'),
 ('https_port', ''),
@@ -3358,7 +3358,7 @@ INSERT INTO `tiki_preferences` (`name`, `value`) VALUES
 ('feature_topbar_custom_code', ''),
 ('feature_top_bar', 'n'),
 ('feature_sitesearch', 'n'),
-('sitetitle', 'PublicaÃ§Ãµes EducaÃ§Ã£o'),
+('sitetitle', 'Publicações Educação'),
 ('sitesubtitle', ''),
 ('style_option', 'cool.css'),
 ('site_style_option', 'cool.css'),
@@ -3498,8 +3498,8 @@ INSERT INTO `tiki_preferences` (`name`, `value`) VALUES
 ('rssfeed_webmaster', ''),
 ('rss_cache_time', '0'),
 ('rssfeed_img', 'img/tiki/tikilogo.png'),
-('title_rss_file_galleries', 'PublicaÃ§Ãµes EducaÃ§Ã£o - Galerias de Arquivo'),
-('title_rss_file_gallery', 'PublicaÃ§Ãµes EducaÃ§Ã£o - Galerias de Arquivo'),
+('title_rss_file_galleries', 'Publicações Educação - Galerias de Arquivo'),
+('title_rss_file_gallery', 'Publicações Educação - Galerias de Arquivo'),
 ('fgal_quota_show', 'n'),
 ('fgal_use_db', 'n'),
 ('fgal_podcast_dir', 'files/'),
@@ -3546,7 +3546,7 @@ INSERT INTO `tiki_preferences` (`name`, `value`) VALUES
 ('wikiapproval_prefix', '*'),
 ('wikiapproval_master_group', ''),
 ('gal_use_lib', 'gd'),
-('sitelogo_title', 'PublicaÃ§Ãµes EducaÃ§Ã£o'),
+('sitelogo_title', 'Publicações Educação'),
 ('feature_sefurl', 'y'),
 ('feature_sefurl_filter', 'y'),
 ('feature_sefurl_paths', 'a:1:{i:0;s:0:"";}'),
@@ -3557,7 +3557,7 @@ INSERT INTO `tiki_preferences` (`name`, `value`) VALUES
 ('feature_bot_logo', 'y'),
 ('feature_custom_html_head_content', '{literal}\r\n<style type="text/css">\r\nform.findtable { padding-top: 10px; }\r\n</style>\r\n{/literal}'),
 ('feature_bot_bar_rss', 'n'),
-('bot_logo_code', '<div id="power" style="padding-top: 9px; padding-bottom: 0px;">\r\nFundaÃ§Ã£o Padre Anchieta â€“ PublicaÃ§Ãµes EducaÃ§Ã£o<br />\r\nRua Cenno Sbrighi 378, 05036-900, SÃ£o Paulo, SP â€“ Telefone para contato: 2182-3215 ou 2182-3292\r\n</div>'),
+('bot_logo_code', '<div id="power" style="padding-top: 9px; padding-bottom: 0px;">\r\nFundação Padre Anchieta �?? Publicações Educação<br />\r\nRua Cenno Sbrighi 378, 05036-900, São Paulo, SP �?? Telefone para contato: 2182-3215 ou 2182-3292\r\n</div>'),
 ('validateUsers', 'n');
 
 -- --------------------------------------------------------
