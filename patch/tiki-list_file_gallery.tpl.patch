@@ -1,5 +1,14 @@
---- templates/tiki-list_file_gallery.tpl	2010-03-18 11:48:32.000000000 -0300
-+++ templates/tiki-list_file_gallery.tpl	2010-03-21 17:31:04.000000000 -0300
+--- ../tiki40/templates/tiki-list_file_gallery.tpl	2010-03-18 11:48:32.000000000 -0300
++++ templates/tiki-list_file_gallery.tpl	2010-03-23 19:20:34.000000000 -0300
+@@ -61,7 +61,7 @@
+   {/if}
+ 
+   {if $tiki_p_list_file_galleries eq 'y' or (!isset($tiki_p_list_file_galleries) and $tiki_p_view_file_gallery eq 'y')}
+-    {button _text="{tr}List Galleries{/tr}" href="?"}
++    {button _text="{tr}List Galleries{/tr}" href="$base_url"}
+   {/if}
+ 
+   {if $tiki_p_create_file_galleries eq 'y' and $edit_mode ne 'y'}
 @@ -83,7 +83,7 @@
      {if $view eq 'browse'}
        {button _text="{tr}List Gallery{/tr}" href="?view=list&amp;galleryId=$galleryId"}

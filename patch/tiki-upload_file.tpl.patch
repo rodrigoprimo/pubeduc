@@ -1,5 +1,17 @@
---- templates/tiki-upload_file.tpl	2009-11-12 22:06:27.000000000 -0200
-+++ templates/tiki-upload_file.tpl	2010-03-21 17:42:33.000000000 -0300
+--- ../tiki40/templates/tiki-upload_file.tpl	2010-03-19 01:42:19.000000000 -0300
++++ templates/tiki-upload_file.tpl	2010-03-23 19:22:49.000000000 -0300
+@@ -17,9 +17,9 @@
+ 	{if count($galleries) > 0 and $tiki_p_list_file_galleries eq 'y'}
+ 		{if $filegals_manager neq ''}
+ 			{assign var=fgmanager value=$filegals_manager|escape}
+-			{button href="tiki-list_file_gallery.php?filegals_manager=$fgmanager" _text="{tr}List Galleries{/tr}"}
++			{button href="$base_url" _text="{tr}List Galleries{/tr}"}
+ 		{else}
+-			{button href="tiki-list_file_gallery.php" _text="{tr}List Galleries{/tr}"}
++			{button href="$base_url" _text="{tr}List Galleries{/tr}"}
+ 		{/if}
+ 	{/if}
+ 	{if count($uploads) > 0}
 @@ -164,10 +164,9 @@
  				<input type="hidden" name="galleryId" value="{$prefs.fgal_root_id}"/>
  			{elseif empty($groupforalert)}
