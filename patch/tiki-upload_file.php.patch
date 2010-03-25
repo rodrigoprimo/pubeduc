@@ -1,6 +1,21 @@
---- tiki-upload_file.php	2010-02-23 19:33:34.000000000 -0300
-+++ tiki-upload_file.php	2010-03-20 14:40:44.000000000 -0300
-@@ -394,14 +394,14 @@
+--- tiki-upload_file.php	2010-03-18 11:48:32.000000000 -0300
++++ tiki-upload_file.php	2010-03-25 20:21:58.000000000 -0300
+@@ -344,8 +344,12 @@
+ 			print_msg($error, $formId);
+ 		}
+ 	}
+-	if ($editFile && !$didFileReplace) {
+-		$filegallib->replace_file($editFileId, $_REQUEST['name'][0], $_REQUEST['description'][0], $fileInfo['filename'], $fileInfo['data'], $fileInfo['filesize'], $fileInfo['filetype'], $fileInfo['user'], $fileInfo['path'], $_REQUEST['comment'][0], $gal_info, $didFileReplace, $_REQUEST['author'][0], $fileInfo['lastModif'], $fileInfo['lockedby']);
++    if ($editFile && !$didFileReplace) {
++        if ($_REQUEST['created_Year']) {
++            $createdDate = $filegallib->make_time($_REQUEST["created_Hour"], $_REQUEST["created_Minute"], 0, $_REQUEST["created_Month"], $_REQUEST["created_Day"], $_REQUEST["created_Year"]);
++            $filegallib->query('UPDATE tiki_files SET created = ' . $createdDate . ' WHERE fileId = ' . $editFileId);
++        }
++        $filegallib->replace_file($editFileId, $_REQUEST['name'][0], $_REQUEST['description'][0], $_REQUEST['filename'], $fileInfo['data'], $fileInfo['filesize'], $fileInfo['filetype'], $fileInfo['user'], $fileInfo['path'], $_REQUEST['comment'][0], $gal_info, $didFileReplace, $_REQUEST['author'][0], $fileInfo['lastModif'], $fileInfo['lockedby']);
+ 		$fileChangedMessage = tra('File update was successful') . ': ' . $_REQUEST['name'];
+ 		$smarty->assign('fileChangedMessage', $fileChangedMessage);
+ 		$cat_type = 'file';
+@@ -394,14 +398,14 @@
  	}
  	$temp_max = count($galleries["data"]);
  	for ($i = 0; $i < $temp_max; $i++) {

@@ -1,5 +1,5 @@
---- ../tiki40/templates/tiki-upload_file.tpl	2010-03-19 01:42:19.000000000 -0300
-+++ templates/tiki-upload_file.tpl	2010-03-23 19:22:49.000000000 -0300
+--- templates/tiki-upload_file.tpl	2010-03-19 01:42:19.000000000 -0300
++++ templates/tiki-upload_file.tpl	2010-03-25 20:21:56.000000000 -0300
 @@ -17,9 +17,9 @@
  	{if count($galleries) > 0 and $tiki_p_list_file_galleries eq 'y'}
  		{if $filegals_manager neq ''}
@@ -12,7 +12,47 @@
  		{/if}
  	{/if}
  	{if count($uploads) > 0}
-@@ -164,10 +164,9 @@
+@@ -113,7 +113,7 @@
+ 	<hr class="clear"/>
+ 
+ 
+-
++{debug}
+ 	<div class="fgal_file">
+ 		<div class="fgal_file_c1">
+ 		<table width="100%">
+@@ -123,6 +123,22 @@
+ 					<input style="width:100%" type="text" id="name" name="name[]" {if isset($fileInfo) and $fileInfo.name}value="{$fileInfo.name}"{/if} size="40" /> {if $gal_info.type eq "podcast" or $gal_info.type eq "vidcast"} ({tr}required field for podcasts{/tr}){/if}
+ 				</td>
+ 			</tr>
++			
++			{if isset($fileInfo) and $tiki_p_admin eq 'y'}
++				<tr>
++					<td><label for="name">Nome do arquivo:</label></td>
++					<td width="80%">
++						<input style="width:100%" type="text" id="filename" name="filename" {if isset($fileInfo) and $fileInfo.filename}value="{$fileInfo.filename}"{/if} size="40" />
++					</td>
++				</tr>
++				<tr>
++					<td><label for="name">Data de criação:</label></td>
++					<td width="80%">
++						{html_select_date prefix="created_" time=$fileInfo.created start_year="-5" end_year="+10" field_order=$prefs.display_field_order} {tr}at{/tr}
++				                <span dir="ltr">{html_select_time prefix="created_" time=$$fileInfo.created display_seconds=false}</span>
++					</td>
++				</tr>
++			{/if}
+ 			<tr>
+ 				<td><label for="description">{tr}File description:{/tr}</label></td>
+ 				<td>
+@@ -130,6 +146,7 @@
+ 				{if $gal_info.type eq "podcast" or $gal_info.type eq "vidcast"}<br /><em>{tr}Required for podcasts{/tr}.</em>{/if}
+ 				</td>
+ 			</tr>{/if}
++
+ 			<tr>
+ 	{* File replacement is only here when the javascript upload action is not
+ 	available in the file listing.
+@@ -164,10 +181,9 @@
  				<input type="hidden" name="galleryId" value="{$prefs.fgal_root_id}"/>
  			{elseif empty($groupforalert)}
  			<tr><td>
@@ -24,7 +64,7 @@
  				{section name=idx loop=$galleries}
  					{if $galleries[idx].id neq $prefs.fgal_root_id and
  						( ($galleries[idx].individual eq 'n') or ($galleries[idx].individual_tiki_p_upload_files eq 'y') )
-@@ -284,12 +283,12 @@
+@@ -284,12 +300,12 @@
  	<span class="attention">{tr}The file is locked by {$fileInfo.lockedby}{/tr}</span>
  {/if}
  <br />
