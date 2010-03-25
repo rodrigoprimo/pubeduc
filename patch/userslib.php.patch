@@ -1,0 +1,23 @@
+--- lib/userslib.php	2010-03-18 11:44:19.000000000 -0300
++++ lib/userslib.php	2010-03-25 17:03:08.000000000 -0300
+@@ -1159,6 +1159,10 @@
+ 	    $res["age"] = $this->now - $res["registrationDate"];
+             $res['user_information'] = $this->get_user_preference($user, 'user_information', 'public');
+ 
++        // codigo adicionado para o sistema do pubeduc
++        $res['realName'] = $this->get_user_preference($user, 'realName', '');
++        $res['other_information'] = $this->get_user_preference($user, 'other_information', '');
++
+ 		$res['editable'] = $this->user_can_be_edited($user);
+ 
+ 	    $ret[] = $res;
+@@ -1699,6 +1703,9 @@
+ 	if ( $prefs['login_is_email'] == 'y' && isset($res['login']) && $res['login'] != 'admin' ) $res['email'] = $res['login'];
+ 	
+ 	$res['editable'] = $this->user_can_be_edited($res['login']);
++    
++    $res['realName'] = $this->get_user_preference($res['login'], 'realName', '');
++    $res['other_information'] = $this->get_user_preference($res['login'], 'other_information', '');
+ 	
+ 	return $res;
+     }

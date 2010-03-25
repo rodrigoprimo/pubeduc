@@ -1,0 +1,68 @@
+--- templates/tiki-adminusers.tpl	2010-03-18 11:48:31.000000000 -0300
++++ templates/tiki-adminusers.tpl	2010-03-25 16:48:11.000000000 -0300
+@@ -119,10 +119,10 @@
+ 					   {select_all checkbox_names='checked[]'}
+ 					{/if}
+ 				</th>
+-				<th>{self_link _sort_arg='sort_mode' _sort_field='login'}{tr}User{/tr}{/self_link}</th>
+-				{if $prefs.login_is_email neq 'y'}
+-					<th>{self_link _sort_arg='sort_mode' _sort_field='email}{tr}Email{/tr}{/self_link}</th>
+-				{/if}
++{*				{if $prefs.login_is_email neq 'y'}*}
++					<th>{self_link _sort_arg='sort_mode' _sort_field='email}Usuário/Email{/self_link}</th>
++{*				{/if}*}
++				<th>{self_link _sort_arg='sort_mode' _sort_field='login'}Nome{/self_link}</th>
+ 				<th>{self_link _sort_arg='sort_mode' _sort_field='currentLogin'}{tr}Last login{/tr}{/self_link}</th>
+ 				<th colspan="2">{tr}Groups{/tr}</th>
+ 				<th>{tr}Action{/tr}</th>
+@@ -138,14 +138,14 @@
+ 							{/if}
+ 						</td>
+ 	
++{*						{if $prefs.login_is_email ne 'y'}*}
++							<td><a class="link" href="tiki-adminusers.php?offset={$offset}&amp;numrows={$numrows}&amp;sort_mode={$sort_mode}&amp;user={$users[user].userId}{if $prefs.feature_tabs ne 'y'}#2{/if}" title="{tr}Edit Account Settings:{/tr} {$users[user].user|username}">{$users[user].email}</a></td>
++{*						{/if}*}
++
+ 						<td>
+-							<a class="link" href="tiki-adminusers.php?offset={$offset}&amp;numrows={$numrows}&amp;sort_mode={$sort_mode}&amp;user={$users[user].userId}{if $prefs.feature_tabs ne 'y'}#2{/if}" title="{tr}Edit Account Settings:{/tr} {$users[user].user|username}">{$users[user].user|username}</a>
++							{$users[user].realName}
+ 						</td>
+ 	
+-						{if $prefs.login_is_email ne 'y'}
+-							<td>{$users[user].email}</td>
+-						{/if}
+-	
+ 						<td>
+ 							{if $users[user].currentLogin eq ''}
+ 								{tr}Never{/tr} <em>({tr}Registered{/tr} {$users[user].age|duration_short} {tr}ago{/tr})</em>
+@@ -348,6 +348,14 @@
+ 						{/if}
+ 					</td>
+ 				</tr>
++
++				<tr class="formcolor">
++					<td><label for="realName">Nome:</label></td>
++					<td>
++						<input type="text" name="realName" id="realName" value="{$userinfo.realName}" />
++					</td>
++				</tr>
++
+ 				{*
+ 					No need to specify user password or to ask him to change it, if :
+ 					--> Tiki is using the Tiki + PEAR Auth systems
+@@ -412,7 +420,14 @@
+ 						</tr>
+ 					{/if}
+ 				{/if}
+-				
++
++				<tr class="formcolor">
++					<td><label for="other_information">Informações adicionais:</label></td>
++					<td>
++						<textarea rows="5" cols="33" name="other_information" id="other_information" />{$userinfo.other_information}</textarea>
++					</td>
++				</tr>
++			
+ 				{if $prefs.login_is_email neq 'y'}
+ 					<tr class="formcolor">
+ 						<td><label for="email">{tr}Email:{/tr}</label></td>

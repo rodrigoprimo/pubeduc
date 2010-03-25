@@ -1,0 +1,11 @@
+--- templates/list_file_gallery_content.tpl	2010-03-18 11:48:31.000000000 -0300
++++ templates/list_file_gallery_content.tpl	2010-03-24 02:06:44.000000000 -0300
+@@ -293,7 +293,7 @@
+   {if $gal_info.show_checked ne 'n' and $tiki_p_admin_file_galleries eq 'y' and $prefs.javascript_enabled eq 'y'}
+ 		<tr>
+ 			<td colspan="{$nbCols}">
+-				{select_all checkbox_names='file[], subgal[]' label="{tr}Select All{/tr}"}
++				{select_all checkbox_names='file[],subgal[]' label="{tr}Select All{/tr}"}
+ 			</td>
+ 		</tr>
+   {/if}

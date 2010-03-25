@@ -1,0 +1,42 @@
+--- tiki-adminusers.php	2010-03-18 11:48:32.000000000 -0300
++++ tiki-adminusers.php	2010-03-25 17:22:26.000000000 -0300
+@@ -226,6 +226,10 @@
+ 				}
+ 				$cookietab = '1';
+ 				$_REQUEST['find'] = $_REQUEST["name"];
++
++                //codigo customizado para o pubeduc
++                $userlib->set_user_preference($_REQUEST['email'], 'realName', $_REQUEST['realName']);
++                $userlib->set_user_preference($_REQUEST['email'], 'other_information', $_REQUEST['other_information']);
+ 			} else {
+ 				$tikifeedback[] = array(
+ 					'num' => 1,
+@@ -484,6 +488,28 @@
+ 	if (isset($_POST["edituser"]) and isset($_POST['name']) and isset($_POST['email'])) {
+ 		//var_dump($_POST);die;
+ 		if (!empty($_POST['name'])) {
++            
++            //codigo customizado para o pubeduc
++            if ($userinfo['realName'] != $_POST['realName']) {
++                $userlib->set_user_preference($_POST['name'], 'realName', $_POST['realName']);
++                $userinfo['realName'] = $_POST['realName'];
++                // HACK ALERT: na verdade o que precisa fazer eh soh mudar o valor do nome para o usuario no $users e nao pegar todos os usuarios de novo
++                $users = $userlib->get_users($offset, $numrows, $sort_mode, $find, $initial, true, $filterGroup, $filterEmail);
++                $smarty->assign_by_ref('users', $users["data"]);
++                $tikifeedback[] = array(
++                    'num' => 0,
++                    'mes' => 'Nome alterado com sucesso'
++                );
++            }
++            if ($userinfo['other_information'] != $_POST['other_information']) {
++                $userlib->set_user_preference($_POST['name'], 'other_information', $_POST['other_information']);
++                $userinfo['other_information'] = $_POST['other_information'];
++                $tikifeedback[] = array(
++                    'num' => 0,
++                    'mes' => 'Informações adicionais alteradas com sucesso'
++                );
++            }
++
+ 			if ($userinfo['login'] != $_POST['name'] && $userinfo['login'] != 'admin') {
+ 				if ($userlib->user_exists($_POST['name'])) {
+ 					$tikifeedback[] = array(
