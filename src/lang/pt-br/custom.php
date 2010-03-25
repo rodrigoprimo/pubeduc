@@ -158,6 +158,7 @@ $lang_custom = array(
 "File title" => "Nome",
 "Filename" => "Nome",
 "Actions" => "A&ccedil;&otilde;es",
+"Folder" => "Acervo",
 );
 
 $lang = array_merge($lang, $lang_custom);
