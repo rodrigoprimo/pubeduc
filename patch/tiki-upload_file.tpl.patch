@@ -12,15 +12,6 @@
  		{/if}
  	{/if}
  	{if count($uploads) > 0}
-@@ -113,7 +113,7 @@
- 	<hr class="clear"/>
- 
- 
--
-+{debug}
- 	<div class="fgal_file">
- 		<div class="fgal_file_c1">
- 		<table width="100%">
 @@ -123,6 +123,22 @@
  					<input style="width:100%" type="text" id="name" name="name[]" {if isset($fileInfo) and $fileInfo.name}value="{$fileInfo.name}"{/if} size="40" /> {if $gal_info.type eq "podcast" or $gal_info.type eq "vidcast"} ({tr}required field for podcasts{/tr}){/if}
  				</td>
