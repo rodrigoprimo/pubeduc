@@ -1,0 +1,11 @@
+--- templates/tiki-bot_bar.tpl	2010-03-18 11:48:31.000000000 -0300
++++ templates/tiki-bot_bar.tpl	2010-04-22 15:18:45.000000000 -0300
+@@ -73,7 +73,7 @@
+ 		{tr}Powered by{/tr} <a href="http://info.tikiwiki.org" title="&#169; 2002&#8211;{$smarty.now|date_format:"%Y"} {tr}The TikiWiki Community{/tr}">{tr}TikiWiki CMS/Groupware{/tr}</a> {if $prefs.feature_topbar_version eq 'y'} v{$tiki_version} {if $tiki_uses_svn eq 'y'} (SVN){/if} -{$tiki_star}- {/if} | 
+ 	{/if}
+ 	<div id="credits">
+-		{include file='credits.tpl'}
++	{*	{include file='credits.tpl'}*}
+ 	</div>
+ </div>
+ 
