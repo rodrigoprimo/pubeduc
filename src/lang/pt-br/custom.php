@@ -159,6 +159,13 @@ $lang_custom = array(
 "Filename" => "Nome",
 "Actions" => "A&ccedil;&otilde;es",
 "Folder" => "Acervo",
+"First Page" => "Primeira página",
+"Previous Page" => "Página anterior",
+"Prev Page" => "Página anterior",
+"Page" => "página",
+"Next Page" => "Próxima página",
+"Last Page" => "Última página",
+
 );
 
 $lang = array_merge($lang, $lang_custom);
