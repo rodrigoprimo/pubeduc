@@ -1,6 +1,17 @@
---- ../tiki40/templates/tiki-list_file_gallery.tpl	2010-03-18 11:48:32.000000000 -0300
-+++ templates/tiki-list_file_gallery.tpl	2010-03-23 19:20:34.000000000 -0300
-@@ -61,7 +61,7 @@
+--- templates/tiki-list_file_gallery.tpl	2010-03-18 11:48:32.000000000 -0300
++++ templates/tiki-list_file_gallery.tpl	2010-04-22 12:08:51.000000000 -0300
+@@ -2,6 +2,10 @@
+ 
+ {popup_init src="lib/overlib.js"}
+ 
++{if $gal_info.type eq 'images'}
++  {assign var=view value='browse'}
++{/if}
++
+ {title help="File+Galleries" admpage="fgal"}
+   {strip}
+     {if $edit_mode eq 'y'}
+@@ -61,7 +65,7 @@
    {/if}
  
    {if $tiki_p_list_file_galleries eq 'y' or (!isset($tiki_p_list_file_galleries) and $tiki_p_view_file_gallery eq 'y')}
@@ -9,16 +20,19 @@
    {/if}
  
    {if $tiki_p_create_file_galleries eq 'y' and $edit_mode ne 'y'}
-@@ -83,7 +83,7 @@
+@@ -81,9 +85,9 @@
+ 
+   {if $edit_mode neq 'y' and $dup_mode neq 'y'}
      {if $view eq 'browse'}
-       {button _text="{tr}List Gallery{/tr}" href="?view=list&amp;galleryId=$galleryId"}
+-      {button _text="{tr}List Gallery{/tr}" href="?view=list&amp;galleryId=$galleryId"}
++      {*{button _text="{tr}List Gallery{/tr}" href="?view=list&amp;galleryId=$galleryId"}*}
      {else}
 -      {button _text="{tr}Browse Images{/tr}" href="?view=browse&amp;galleryId=$galleryId" _ajax='n'} {* no AJAX to make shadowbox work in browse view *}
 +      {*{button _text="{tr}Browse Images{/tr}" href="?view=browse&amp;galleryId=$galleryId" _ajax='n'}*} {* no AJAX to make shadowbox work in browse view *}
      {/if}
    {/if}
  
-@@ -191,9 +191,11 @@
+@@ -191,9 +195,11 @@
    {include file='duplicate_file_gallery.tpl'}
  
  {else}

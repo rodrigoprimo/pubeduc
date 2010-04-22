@@ -1,0 +1,28 @@
+--- templates/edit_file_gallery.tpl	2010-03-17 11:49:53.000000000 -0300
++++ templates/edit_file_gallery.tpl	2010-04-22 11:29:25.000000000 -0300
+@@ -18,7 +18,7 @@
+ 			<b>{tr}File Galleries{/tr}</b>
+       			<input type="hidden" name="name" value="{$gal_info.name|escape}" />
+ 		{else}
+-			<input type="text" size="50" id="name" name="name" value="{$gal_info.name|escape}" style="width:100%"/><br/><em>{tr}Required for podcasts{/tr}.</em>
++			<input type="text" size="50" id="name" name="name" value="{$gal_info.name|escape}" style="width:100%"/>
+ 		{/if}
+ 	</td></tr>
+         <tr><td class="formcolor"><label for="fgal_type">{tr}Type{/tr}:</label></td><td class="formcolor">
+@@ -28,13 +28,12 @@
+ 		{else}
+ 			<select name="fgal_type" id="fgal_type">
+ 				<!-- TODO: make this a configurable list read from database -->
+-				<option value="default" {if $gal_info.type eq 'default'}selected="selected"{/if}>{tr}Any file{/tr}</option>
+-				<option value="podcast" {if $gal_info.type eq 'podcast'}selected="selected"{/if}>{tr}Podcast (audio){/tr}</option>
+-				<option value="vidcast" {if $gal_info.type eq 'vidcast'}selected="selected"{/if}>{tr}Podcast (video){/tr}</option>
++				<option value="default" {if $gal_info.type eq 'default'}selected="selected"{/if}>Acervo de arquivos</option>
++				<option value="images" {if $gal_info.type eq 'images'}selected="selected"{/if}>Galeria de imagens</option>
+ 			</select>
+ 		{/if}
+         </td></tr>
+-        <tr><td class="formcolor"><label for="description">{tr}Description{/tr}:</label></td><td class="formcolor"><textarea rows="5" cols="40" id="description" name="description" style="width:100%">{$gal_info.description|escape}</textarea><br/><em>{tr}Required for podcasts{/tr}.</em></td></tr>
++        <tr><td class="formcolor"><label for="description">{tr}Description{/tr}:</label></td><td class="formcolor"><textarea rows="5" cols="40" id="description" name="description" style="width:100%">{$gal_info.description|escape}</textarea></td></tr>
+         <tr><td class="formcolor"><label for="visible">{tr}Gallery is visible to non-admin users{/tr}.<label></td><td class="formcolor"><input type="checkbox" id="visible" name="visible" {if $gal_info.visible eq 'y'}checked="checked"{/if} /></td></tr>
+ 
+         <tr><td class="formcolor"><label for="public">{tr}Gallery is public{/tr}.</label></td><td class="formcolor"><input type="checkbox" id="public" name="public" {if $gal_info.public eq 'y'}checked="checked"{/if}/><br /><em>{tr}Any user with permission (not only the gallery owner) can upload files{/tr}.</em></td></tr>
