@@ -1,5 +1,5 @@
 --- templates/tiki-upload_file.tpl	2010-03-19 01:42:19.000000000 -0300
-+++ templates/tiki-upload_file.tpl	2010-04-26 15:49:46.000000000 -0300
++++ templates/tiki-upload_file.tpl	2010-04-26 18:42:03.000000000 -0300
 @@ -17,9 +17,9 @@
  	{if count($galleries) > 0 and $tiki_p_list_file_galleries eq 'y'}
  		{if $filegals_manager neq ''}
@@ -12,7 +12,20 @@
  		{/if}
  	{/if}
  	{if count($uploads) > 0}
-@@ -123,13 +123,45 @@
+@@ -112,7 +112,11 @@
+ 	{capture name=upload_file assign=upload_str}
+ 	<hr class="clear"/>
+ 
+-
++    {if $gal_info.type eq 'images' and preg_match('/^image/', $fileInfo.filetype)}
++        <br />
++        <div align="center"><a href="{$base_url}tiki-download_file.php?fileId={$fileInfo.fileId}&display" target="_blank"><img src="{$base_url}tiki-download_file.php?fileId={$fileInfo.fileId}&display&x=300"></a></div>
++        <br />
++    {/if}
+ 
+ 	<div class="fgal_file">
+ 		<div class="fgal_file_c1">
+@@ -123,13 +127,45 @@
  					<input style="width:100%" type="text" id="name" name="name[]" {if isset($fileInfo) and $fileInfo.name}value="{$fileInfo.name}"{/if} size="40" /> {if $gal_info.type eq "podcast" or $gal_info.type eq "vidcast"} ({tr}required field for podcasts{/tr}){/if}
  				</td>
  			</tr>
@@ -59,7 +72,7 @@
  			<tr>
  	{* File replacement is only here when the javascript upload action is not
  	available in the file listing.
-@@ -164,10 +196,9 @@
+@@ -164,10 +200,9 @@
  				<input type="hidden" name="galleryId" value="{$prefs.fgal_root_id}"/>
  			{elseif empty($groupforalert)}
  			<tr><td>
@@ -71,7 +84,7 @@
  				{section name=idx loop=$galleries}
  					{if $galleries[idx].id neq $prefs.fgal_root_id and
  						( ($galleries[idx].individual eq 'n') or ($galleries[idx].individual_tiki_p_upload_files eq 'y') )
-@@ -284,12 +315,12 @@
+@@ -284,12 +319,12 @@
  	<span class="attention">{tr}The file is locked by {$fileInfo.lockedby}{/tr}</span>
  {/if}
  <br />
