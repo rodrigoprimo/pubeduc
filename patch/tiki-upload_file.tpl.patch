@@ -25,7 +25,7 @@
 +					</td>
 +				</tr>
 +				<tr>
-+					<td><label for="name">Data de criação:</label></td>
++					<td><label for="name">Data de envio:</label></td>
 +					<td width="80%">
 +						{html_select_date prefix="created_" time=$fileInfo.created start_year="-5" end_year="+10" field_order=$prefs.display_field_order} {tr}at{/tr}
 +				                <span dir="ltr">{html_select_time prefix="created_" time=$$fileInfo.created display_seconds=false}</span>
