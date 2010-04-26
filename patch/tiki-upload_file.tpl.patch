@@ -1,5 +1,5 @@
 --- templates/tiki-upload_file.tpl	2010-03-19 01:42:19.000000000 -0300
-+++ templates/tiki-upload_file.tpl	2010-03-25 20:21:56.000000000 -0300
++++ templates/tiki-upload_file.tpl	2010-04-26 15:49:46.000000000 -0300
 @@ -17,9 +17,9 @@
  	{if count($galleries) > 0 and $tiki_p_list_file_galleries eq 'y'}
  		{if $filegals_manager neq ''}
@@ -12,7 +12,7 @@
  		{/if}
  	{/if}
  	{if count($uploads) > 0}
-@@ -123,6 +123,22 @@
+@@ -123,13 +123,45 @@
  					<input style="width:100%" type="text" id="name" name="name[]" {if isset($fileInfo) and $fileInfo.name}value="{$fileInfo.name}"{/if} size="40" /> {if $gal_info.type eq "podcast" or $gal_info.type eq "vidcast"} ({tr}required field for podcasts{/tr}){/if}
  				</td>
  			</tr>
@@ -25,7 +25,7 @@
 +					</td>
 +				</tr>
 +				<tr>
-+					<td><label for="name">Data de envio:</label></td>
++					<td><label for="name">Data de criação:</label></td>
 +					<td width="80%">
 +						{html_select_date prefix="created_" time=$fileInfo.created start_year="-5" end_year="+10" field_order=$prefs.display_field_order} {tr}at{/tr}
 +				                <span dir="ltr">{html_select_time prefix="created_" time=$$fileInfo.created display_seconds=false}</span>
@@ -35,15 +35,31 @@
  			<tr>
  				<td><label for="description">{tr}File description:{/tr}</label></td>
  				<td>
-@@ -130,6 +146,7 @@
+ 					<textarea style="width:100%" rows="2" cols="40" id="description" name="description[]">{if isset($fileInfo) and $fileInfo.description}{$fileInfo.description}{/if}</textarea>
  				{if $gal_info.type eq "podcast" or $gal_info.type eq "vidcast"}<br /><em>{tr}Required for podcasts{/tr}.</em>{/if}
  				</td>
- 			</tr>{/if}
+-			</tr>{/if}
++			</tr>
++			{if isset($gal_info) and $gal_info.type eq 'images'}
++				<tr>
++					<td><label for="subtitle">Legenda:</label></td>
++					<td>
++						<textarea style="width:100%" rows="2" cols="40" id="subtitle" name="subtitle[]">{if isset($fileInfo) and $fileInfo.subtitle}{$fileInfo.subtitle}{/if}</textarea>
++					</td>
++				</tr>
 +
++				<tr>
++					<td><label for="credit">Crédito:</label></td>
++					<td>
++						<input type="text" id="credit" name="credit[]" value="{if isset($fileInfo) and $fileInfo.credit}{$fileInfo.credit}{/if}" style="width:100%;" />
++					</td>
++				</tr>
++			{/if}
++			{/if}
  			<tr>
  	{* File replacement is only here when the javascript upload action is not
  	available in the file listing.
-@@ -164,10 +181,9 @@
+@@ -164,10 +196,9 @@
  				<input type="hidden" name="galleryId" value="{$prefs.fgal_root_id}"/>
  			{elseif empty($groupforalert)}
  			<tr><td>
@@ -55,7 +71,7 @@
  				{section name=idx loop=$galleries}
  					{if $galleries[idx].id neq $prefs.fgal_root_id and
  						( ($galleries[idx].individual eq 'n') or ($galleries[idx].individual_tiki_p_upload_files eq 'y') )
-@@ -284,12 +300,12 @@
+@@ -284,12 +315,12 @@
  	<span class="attention">{tr}The file is locked by {$fileInfo.lockedby}{/tr}</span>
  {/if}
  <br />
