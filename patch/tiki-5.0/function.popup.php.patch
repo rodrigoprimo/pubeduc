@@ -1,0 +1,17 @@
+--- lib/smarty_tiki/function.popup.php	2010-04-27 17:53:10.000000000 -0300
++++ lib/smarty_tiki/function.popup.php	2010-04-08 14:49:43.000000000 -0300
+@@ -116,12 +121,10 @@
+ 		$append .= ',\'' . $trigger . '\'';
+ 	}
+ 
+-	$retval = $trigger . '="return convertOverlib(this,\''.urlencode(TikiLib::htmldecode($text)).'\'';
++	$text = preg_replace(array('/\\\\r\n/','/\\\\n/','/\\\\r/'), "", $text);	// Remove newlines to avoid JavaScript statement over several lines
++	$retval = $trigger . '="return convertOverlib(this,\''.$text.'\'';
+ 	$append = trim($append, ',');
+     $retval .= ',[' . $append . ']);"';
+-//    if ($trigger == 'onmouseover')
+-//       $retval .= ' onmouseout="nd();"';
+-
+ 
+     return $retval;
+ }
