@@ -1,6 +1,15 @@
---- lib/tikilib.php	2010-03-18 11:44:19.000000000 -0300
-+++ lib/tikilib.php	2010-03-23 15:20:31.000000000 -0300
-@@ -2346,14 +2346,16 @@
+--- lib/tikilib.php	2010-02-23 20:09:21.000000000 -0300
++++ lib/tikilib.php	2010-04-27 18:10:01.000000000 -0300
+@@ -2210,6 +2210,8 @@
+ 				'tf.`lockedby`' => "'' as `lockedby`",
+ 				'tf.`comment`' => "'' as `comment`",
+ 				'tf.`archiveId`' => '0 as `archiveId`',
++				'tf.`subtitle`' => "'' as `subtitle`",
++				'tf.`credit`' => "'' as `credit`",
+ 				"'' as `visible`" => 'tfg.`visible`',
+ 				"'' as `public`" => 'tfg.`public`',
+ 
+@@ -2346,14 +2348,16 @@
  			$fgal_perms = array();
  		}
  		foreach( $result as $res ) {

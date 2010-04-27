@@ -1,0 +1,19 @@
+--- templates/browse_file_gallery.tpl	2009-10-22 00:12:05.000000000 -0200
++++ templates/browse_file_gallery.tpl	2010-04-27 18:16:21.000000000 -0300
+@@ -34,6 +34,7 @@
+       <div class='box-title'>{tr}Properties{/tr}</div>
+       <div class='box-data'>
+         <div>
++	{if $gal_info.type eq 'images'}<b>Nome do arquivo:</b> {$files[changes].filename}<br />{/if}
+         {foreach item=prop key=propname from=$fgal_listing_conf}
+           {if isset($prop.key)}
+             {assign var=propkey value=$item.key}
+@@ -56,6 +57,8 @@
+             {assign var=nb_over_infos value=`$nb_over_infos+1`}
+           {/if}
+         {/foreach}
++	{if $files[changes].subtitle neq ''}<b>Legenda:</b> {$files[changes].subtitle}<br />{/if}
++	{if $files[changes].credit neq ''}<b>Cr&eacute;dito</b> {$files[changes].credit}<br />{/if}
+         </div>
+       </div>
+     </div>
