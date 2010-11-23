@@ -1,5 +1,5 @@
---- templates/tiki-upload_file.tpl	2010-03-19 01:42:19.000000000 -0300
-+++ templates/tiki-upload_file.tpl	2010-04-26 18:42:03.000000000 -0300
+--- templates/tiki-upload_file.tpl	2010-11-22 10:10:24.517205999 -0200
++++ templates/tiki-upload_file.tpl	2010-11-23 17:16:59.401047000 -0200
 @@ -17,9 +17,9 @@
  	{if count($galleries) > 0 and $tiki_p_list_file_galleries eq 'y'}
  		{if $filegals_manager neq ''}
@@ -12,7 +12,7 @@
  		{/if}
  	{/if}
  	{if count($uploads) > 0}
-@@ -112,7 +112,11 @@
+@@ -113,7 +113,11 @@
  	{capture name=upload_file assign=upload_str}
  	<hr class="clear"/>
  
@@ -25,7 +25,7 @@
  
  	<div class="fgal_file">
  		<div class="fgal_file_c1">
-@@ -123,13 +127,45 @@
+@@ -124,13 +128,45 @@
  					<input style="width:100%" type="text" id="name" name="name[]" {if isset($fileInfo) and $fileInfo.name}value="{$fileInfo.name}"{/if} size="40" /> {if $gal_info.type eq "podcast" or $gal_info.type eq "vidcast"} ({tr}required field for podcasts{/tr}){/if}
  				</td>
  			</tr>
@@ -72,7 +72,7 @@
  			<tr>
  	{* File replacement is only here when the javascript upload action is not
  	available in the file listing.
-@@ -164,10 +200,9 @@
+@@ -177,10 +213,9 @@
  				<input type="hidden" name="galleryId" value="{$prefs.fgal_root_id}"/>
  			{elseif empty($groupforalert)}
  			<tr><td>
@@ -82,9 +82,9 @@
  				<select id="galleryId" name="galleryId[]">
 -					<option value="{$prefs.fgal_root_id}" {if $prefs.fgal_root_id eq $galleryId}selected="selected"{/if} style="font-style:italic; border-bottom:1px dashed #666;">{tr}File Galleries{/tr}</option>
  				{section name=idx loop=$galleries}
- 					{if $galleries[idx].id neq $prefs.fgal_root_id and
- 						( ($galleries[idx].individual eq 'n') or ($galleries[idx].individual_tiki_p_upload_files eq 'y') )
-@@ -284,12 +319,12 @@
+ 					{if $galleries[idx].id neq $prefs.fgal_root_id and $galleries[idx].perms.tiki_p_upload_files eq 'y'}
+ 					<option value="{$galleries[idx].id|escape}" {if $galleries[idx].id eq $galleryId}selected="selected"{/if}>{$galleries[idx].name|escape}</option>
+@@ -289,12 +324,12 @@
  	<span class="attention">{tr}The file is locked by {$fileInfo.lockedby}{/tr}</span>
  {/if}
  <br />

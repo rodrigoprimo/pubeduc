@@ -1,23 +1,24 @@
---- lib/userslib.php	2010-03-18 11:44:19.000000000 -0300
-+++ lib/userslib.php	2010-03-25 17:03:08.000000000 -0300
-@@ -1159,6 +1159,10 @@
- 	    $res["age"] = $this->now - $res["registrationDate"];
-             $res['user_information'] = $this->get_user_preference($user, 'user_information', 'public');
+--- lib/userslib.php	2010-11-17 10:36:12.000000000 -0200
++++ lib/userslib.php	2010-11-23 12:50:00.330285002 -0200
+@@ -1358,6 +1358,10 @@
+ 			$res["age"] = $this->now - $res["registrationDate"];
+ 			$res['user_information'] = $this->get_user_preference($user, 'user_information', 'public');
  
-+        // codigo adicionado para o sistema do pubeduc
-+        $res['realName'] = $this->get_user_preference($user, 'realName', '');
-+        $res['other_information'] = $this->get_user_preference($user, 'other_information', '');
++			// codigo adicionado para o sistema do pubeduc
++			$res['realName'] = $this->get_user_preference($user, 'realName', '');
++			$res['other_information'] = $this->get_user_preference($user, 'other_information', '');
 +
- 		$res['editable'] = $this->user_can_be_edited($user);
+ 			$res['editable'] = $this->user_can_be_edited($user);
+ 		}
  
- 	    $ret[] = $res;
-@@ -1699,6 +1703,9 @@
- 	if ( $prefs['login_is_email'] == 'y' && isset($res['login']) && $res['login'] != 'admin' ) $res['email'] = $res['login'];
- 	
- 	$res['editable'] = $this->user_can_be_edited($res['login']);
-+    
-+    $res['realName'] = $this->get_user_preference($res['login'], 'realName', '');
-+    $res['other_information'] = $this->get_user_preference($res['login'], 'other_information', '');
- 	
- 	return $res;
-     }
+@@ -1921,6 +1925,10 @@
+ 
+ 			$res['editable'] = $this->user_can_be_edited($res['login']);
+ 
++			// codigo adicionado para o sistema do pubeduc
++			$res['realName'] = $this->get_user_preference($res['login'], 'realName', '');
++			$res['other_information'] = $this->get_user_preference($res['login'], 'other_information', '');
++
+ 			return $res;
+ 		}
+ 	}

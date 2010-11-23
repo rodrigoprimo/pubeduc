@@ -1,11 +1,11 @@
---- templates/list_file_gallery.tpl	2009-10-16 09:22:39.000000000 -0300
-+++ templates/list_file_gallery.tpl	2010-04-27 14:45:49.000000000 -0300
-@@ -71,7 +71,7 @@
-           {include file='list_file_gallery_content.tpl'}
-         {/if}
-       
--        {if $files and $gal_info.show_checked neq 'n' and ($tiki_p_admin_file_galleries eq 'y' or $tiki_p_upload_files eq 'y' or $tiki_p_assign_perm_file_gallery eq 'y')}
-+        {if $tiki_p_admin_file_galleries eq 'y'}
-         <div id="sel">
-           <div>
-           {tr}Perform action with checked:{/tr} 
+--- templates/list_file_gallery.tpl	2010-11-19 10:25:16.000000000 -0200
++++ templates/list_file_gallery.tpl	2010-11-23 11:27:45.220285000 -0200
+@@ -75,7 +75,7 @@
+ 					{include file='list_file_gallery_content.tpl'}
+ 				{/if}
+ 
+-				{if $files and $gal_info.show_checked neq 'n' and ($tiki_p_admin_file_galleries eq 'y' or $tiki_p_upload_files eq 'y' or $tiki_p_assign_perm_file_gallery eq 'y')}
++				{if $tiki_p_admin_file_galleries eq 'y'}
+ 					<div id="sel">
+ 						<div>
+ 							{tr}Perform action with checked:{/tr}

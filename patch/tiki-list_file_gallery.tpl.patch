@@ -1,48 +1,56 @@
---- templates/tiki-list_file_gallery.tpl	2010-03-18 11:48:32.000000000 -0300
-+++ templates/tiki-list_file_gallery.tpl	2010-04-22 12:08:51.000000000 -0300
-@@ -2,6 +2,10 @@
- 
- {popup_init src="lib/overlib.js"}
+--- templates/tiki-list_file_gallery.tpl	2010-09-21 14:26:01.000000000 -0300
++++ templates/tiki-list_file_gallery.tpl	2010-11-23 12:20:00.190285002 -0200
+@@ -1,5 +1,9 @@
+ {* $Id: tiki-list_file_gallery.tpl 29471 2010-09-21 00:06:12Z jonnybradley $ *}
  
 +{if $gal_info.type eq 'images'}
-+  {assign var=view value='browse'}
++	{assign var=view value='browse'}
 +{/if}
 +
  {title help="File+Galleries" admpage="fgal"}
-   {strip}
-     {if $edit_mode eq 'y'}
-@@ -61,7 +65,7 @@
-   {/if}
+ 	{strip}
+ 		{if $edit_mode eq 'y'}
+@@ -63,7 +67,7 @@
+ 		{/if}
  
-   {if $tiki_p_list_file_galleries eq 'y' or (!isset($tiki_p_list_file_galleries) and $tiki_p_view_file_gallery eq 'y')}
--    {button _text="{tr}List Galleries{/tr}" href="?"}
-+    {button _text="{tr}List Galleries{/tr}" href="$base_url"}
-   {/if}
+ 		{if $tiki_p_list_file_galleries eq 'y' or (!isset($tiki_p_list_file_galleries) and $tiki_p_view_file_gallery eq 'y')}
+-			{button _text="{tr}List Galleries{/tr}" href="?"}
++			{button _text="{tr}List Galleries{/tr}" href="$base_url"}
+ 		{/if}
  
-   {if $tiki_p_create_file_galleries eq 'y' and $edit_mode ne 'y'}
-@@ -81,9 +85,9 @@
+ 		{if $tiki_p_create_file_galleries eq 'y' and $edit_mode ne 'y'}
+@@ -84,12 +88,12 @@
  
-   {if $edit_mode neq 'y' and $dup_mode neq 'y'}
-     {if $view eq 'browse'}
--      {button _text="{tr}List Gallery{/tr}" href="?view=list&amp;galleryId=$galleryId"}
-+      {*{button _text="{tr}List Gallery{/tr}" href="?view=list&amp;galleryId=$galleryId"}*}
-     {else}
--      {button _text="{tr}Browse Images{/tr}" href="?view=browse&amp;galleryId=$galleryId" _ajax='n'} {* no AJAX to make shadowbox work in browse view *}
-+      {*{button _text="{tr}Browse Images{/tr}" href="?view=browse&amp;galleryId=$galleryId" _ajax='n'}*} {* no AJAX to make shadowbox work in browse view *}
-     {/if}
-   {/if}
+ 		{if $edit_mode neq 'y' and $dup_mode neq 'y'}
+ 			{if $view eq 'browse' or $view eq 'admin'}
+-				{button _text="{tr}List Gallery{/tr}" href="?view=list&amp;galleryId=$galleryId"}
++				{*{button _text="{tr}List Gallery{/tr}" href="?view=list&amp;galleryId=$galleryId"}*}
+ 			{else}
+-				{if $tiki_p_admin_file_galleries eq 'y'}
++				{*{if $tiki_p_admin_file_galleries eq 'y'}
+ 					{button _text="{tr}Admin View{/tr}" href="?view=admin&amp;galleryId=$galleryId"}
+ 				{/if}
+-				{button _text="{tr}Browse Images{/tr}" view="browse" galleryId=$galleryId} {* no AJAX to make shadowbox work in browse view *}
++				{button _text="{tr}Browse Images{/tr}" view="browse" galleryId=$galleryId}*} {* no AJAX to make shadowbox work in browse view *}
+ 			{/if}
+ 		{/if}
  
-@@ -191,9 +195,11 @@
-   {include file='duplicate_file_gallery.tpl'}
+@@ -111,7 +115,7 @@
+ 	{else}
  
+ 		{if $edit_mode eq 'y' or $dup_mode eq 'y'}
+-			{button _text="{tr}List Galleries{/tr}" href='?'}
++			{button _text="{tr}List Galleries{/tr}" href='$base_url'}
+ 		{/if}
+ 
+ 		{if $tiki_p_create_file_galleries eq 'y' and $edit_mode ne 'y'}
+@@ -171,7 +175,8 @@
+ {elseif $dup_mode eq 'y'}
+ 	{include file='duplicate_file_gallery.tpl'}
  {else}
--{if $files or ($find ne '')}
-+{*{if $files or ($find ne '')}
-   {include file='find.tpl' find_show_num_rows = 'y'}
--{/if}
-+{/if}*}
-+<br /><br />
-+
- {if $prefs.fgal_quota_show eq 'y' && $gal_info.quota}
- 	<div style="float:right">
- 		{capture name='use'}{math equation="round((100*x)/(1024*1024*y))" x=$gal_info.usedSize y=$gal_info.quota}{/capture}
+-	{include file='find.tpl' find_show_num_rows = 'y' find_show_categories_multi='y' find_durations=$find_durations find_show_sub='y'}
++	{*{include file='find.tpl' find_show_num_rows = 'y' find_show_categories_multi='y' find_durations=$find_durations find_show_sub='y'}*}
++	<br /><br />
+ 
+ 	{if $prefs.fgal_search_in_content eq 'y' and $galleryId > 0}
+ 		<div class="findtable">

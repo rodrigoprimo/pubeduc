@@ -1,33 +1,29 @@
---- templates/list_file_gallery_content.tpl	2009-10-16 05:06:53.000000000 -0300
-+++ templates/list_file_gallery_content.tpl	2010-04-27 14:38:23.000000000 -0300
-@@ -1,7 +1,7 @@
+--- templates/list_file_gallery_content.tpl	2010-10-27 15:12:10.000000000 -0200
++++ templates/list_file_gallery_content.tpl	2010-11-23 11:32:11.750285002 -0200
+@@ -2,7 +2,7 @@
  {if empty($sort_arg)}{assign var='sort_arg' value='sort_mode'}{/if}
  <table class="normal">
-   <tr>
--  {if $gal_info.show_checked ne 'n' and ($tiki_p_admin_file_galleries eq 'y' or $tiki_p_upload_files eq 'y')}
-+  {if $tiki_p_admin_file_galleries eq 'y'}
-     {assign var=nbCols value=`$nbCols+1`}
-     <th style="width:1%">&nbsp;</th>
-   {/if}
-@@ -160,7 +160,7 @@
+ 	<tr>
+-		{if $gal_info.show_checked ne 'n' and ($tiki_p_admin_file_galleries eq 'y' or $tiki_p_upload_files eq 'y')}
++		{if $tiki_p_admin_file_galleries eq 'y'}
+ 			{assign var=nbCols value=`$nbCols+1`}
+ 			<th style="width:1%">&nbsp;</th>
+ 		{/if}
+@@ -191,7 +191,7 @@
+ 			{/if}
+ 		<tr class="{cycle}">
  
-   <tr>
-       
--  {if $gal_info.show_checked neq 'n' and ($tiki_p_admin_file_galleries eq 'y' or $tiki_p_upload_files eq 'y')}
-+  {if $tiki_p_admin_file_galleries eq 'y'}
-     <td style="text-align:center;" class="{cycle advance=false}">
-       {if $files[changes].isgal eq 1}
-         {assign var='checkname' value='subgal'}
-@@ -290,10 +290,10 @@
-   </td></tr>
-   {/section}
+-			{if $gal_info.show_checked neq 'n' and ($tiki_p_admin_file_galleries eq 'y' or $tiki_p_upload_files eq 'y')}
++			{if $tiki_p_admin_file_galleries eq 'y'}
+ 				<td style="text-align:center;">
+ 					{if $files[changes].isgal eq 1}
+ 						{assign var='checkname' value='subgal'}
+@@ -341,7 +341,7 @@
+ 		</tr>
+ 	{/section}
  
--  {if $gal_info.show_checked ne 'n' and $tiki_p_admin_file_galleries eq 'y' and $prefs.javascript_enabled eq 'y'}
-+  {if $tiki_p_admin_file_galleries eq 'y'}
+-	{if $gal_info.show_checked ne 'n' and $tiki_p_admin_file_galleries eq 'y' and $prefs.javascript_enabled eq 'y'}
++	{if $tiki_p_admin_file_galleries eq 'y'}
  		<tr>
  			<td colspan="{$nbCols}">
--				{select_all checkbox_names='file[], subgal[]' label="{tr}Select All{/tr}"}
-+				{select_all checkbox_names='file[],subgal[]' label="{tr}Select All{/tr}"}
- 			</td>
- 		</tr>
-   {/if}
+ 				{select_all checkbox_names='file[],subgal[]' label="{tr}Select All{/tr}"}

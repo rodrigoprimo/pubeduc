@@ -1,20 +1,20 @@
---- ../tiki42/templates/tiki-upload_file_progress.tpl	2009-12-15 19:54:35.000000000 -0200
-+++ templates/tiki-upload_file_progress.tpl	2010-03-21 21:28:12.000000000 -0300
-@@ -22,7 +22,7 @@
- 		{else}
- 			<b>{$name} ({$size|kbsize})</b>
- 		{/if}
--			{if empty($filegals_manager)}<div>
-+{*			{if empty($filegals_manager)}<div>
- 			{button href="#" _onclick="javascript:flip('uploadinfos$fileId');flip('close_uploadinfos$fileId','inline');return false;" _text="{tr}Additional Info{/tr}"}
- 			<span id="close_uploadinfos{$fileId}" style="display:none">
- 				  {button href="#" _onclick="javascript:flip('uploadinfos$fileId');flip('close_uploadinfos$fileId','inline');return false;" _text="({tr}Hide{/tr})"}
-@@ -36,7 +36,7 @@
- 				{if $prefs.feature_shadowbox eq 'y'}
- 					<span style="line-height: 200%">{tr}Display thumbnail that enlarges{/tr}: </span><br/>&nbsp;&nbsp;&nbsp;<tt style="color: brown;">&#x7b;img fileId={$fileId} thumb=y rel=box[g]}</tt><br/>
- 				{/if}
--			</div>{/if}
-+			</div>{/if}*}
+--- templates/tiki-upload_file_progress.tpl 2010-09-21 14:26:01.000000000 -0300
++++ templates/tiki-upload_file_progress.tpl	2010-11-23 12:27:28.990285002 -0200
+@@ -26,7 +26,7 @@
+ 					{$feedback_message}
+ 				</div>
+ 			{/if}
+-			{if empty($filegals_manager)}
++			{*{if empty($filegals_manager)}
+ 				<div>
+ 					{button href="#" _onclick="javascript:flip('uploadinfos$fileId');flip('close_uploadinfos$fileId','inline');return false;" _text="{tr}Additional Info{/tr}"}
+ 					<span id="close_uploadinfos{$fileId}" style="display:none">
+@@ -77,7 +77,7 @@
+ 						</table>
+ 					{/if}
+ 				</div>
+-			{/if}
++			{/if}*}
  		</td>
  	</tr>
  </table>

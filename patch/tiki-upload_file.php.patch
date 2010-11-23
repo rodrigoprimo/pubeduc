@@ -1,8 +1,8 @@
---- tiki-upload_file.php	2010-03-18 11:48:32.000000000 -0300
-+++ tiki-upload_file.php	2010-04-26 16:27:58.000000000 -0300
-@@ -15,6 +15,10 @@
- 	die;
- }
+--- tiki-upload_file.php	2010-11-22 10:10:24.707206001 -0200
++++ tiki-upload_file.php	2010-11-23 12:37:02.640285002 -0200
+@@ -14,6 +14,10 @@
+ $access->check_feature('feature_file_galleries');
+ 
  include_once ('lib/filegals/filegallib.php');
 +
 +// classe com metodos do projeto pubeduc
@@ -11,55 +11,31 @@
  if ($prefs['feature_groupalert'] == 'y') {
  	include_once ('lib/groupalert/groupalertlib.php');
  }
-@@ -287,12 +291,14 @@
- 			if (isset($data)) {
+@@ -395,11 +399,13 @@
  				if ($editFile) {
  					$didFileReplace = true;
--					$fileId = $filegallib->replace_file($editFileId, $_REQUEST["name"][$key], $_REQUEST["description"][$key], $name, $data, $size, $type, $_REQUEST['user'][$key], $fhash . $extension, $_REQUEST['comment'][$key], $gal_info, $didFileReplace, $_REQUEST['author'][$key], $fileInfo['lastModif'], $fileInfo['lockedby']);
-+                    $fileId = $filegallib->replace_file($editFileId, $_REQUEST["name"][$key], $_REQUEST["description"][$key], $name, $data, $size, $type, $_REQUEST['user'][$key], $fhash . $extension, $_REQUEST['comment'][$key], $gal_info, $didFileReplace, $_REQUEST['author'][$key], $fileInfo['lastModif'], $fileInfo['lockedby']);
-+                    $pubeduclib->update_file_custom_fields($fileId, $_REQUEST['subtitle'][$key], $_RESQUEST['credit'][$key]);
+ 					$fileId = $filegallib->replace_file($editFileId, $_REQUEST["name"][$key], $_REQUEST["description"][$key], $name, $data, $size, $type, $_REQUEST['user'][$key], $fhash . $extension, $_REQUEST['comment'][$key], $gal_info, $didFileReplace, $_REQUEST['author'][$key], $fileInfo['lastModif'], $fileInfo['lockedby'], $deleteAfter);
++					$pubeduclib->update_file_custom_fields($fileId, $_REQUEST['subtitle'][$key], $_RESQUEST['credit'][$key]);
  					if ($prefs['fgal_limit_hits_per_file'] == 'y') {
  						$filegallib->set_download_limit($editFileId, $_REQUEST['hit_limit'][$key]);
  					}
--				} else {
--					$fileId = $filegallib->insert_file($_REQUEST["galleryId"][$key], $_REQUEST["name"][$key], $_REQUEST["description"][$key], $name, $data, $size, $type, $_REQUEST['user'][$key], $fhash . $extension, '', $_REQUEST['author'][$key]);
-+                } else {
-+                    $fileId = $filegallib->insert_file($_REQUEST["galleryId"][$key], $_REQUEST["name"][$key], $_REQUEST["description"][$key], $name, $data, $size, $type, $_REQUEST['user'][$key], $fhash . $extension, '', $_REQUEST['author'][$key]);
-+                    $pubeduclib->update_file_custom_fields($fileId, $_REQUEST['subtitle'][$key], $_REQUEST['credit'][$key]);
+ 				} else {
+ 					$fileId = $filegallib->insert_file($_REQUEST["galleryId"][$key], $_REQUEST["name"][$key], $_REQUEST["description"][$key], $name, $data, $size, $type, $_REQUEST['user'][$key], $fhash . $extension, '', $_REQUEST['author'][$key], '', '', $deleteAfter);
++					$pubeduclib->update_file_custom_fields($fileId, $_REQUEST['subtitle'][$key], $_REQUEST['credit'][$key]);
  				}
  				if (!$fileId) {
  					$errors[] = tra('Upload was not successful. Duplicate file content') . ': ' . $name;
-@@ -344,8 +350,13 @@
- 			print_msg($error, $formId);
+@@ -461,7 +467,12 @@
+ 		} else {
+ 			$deleteAfter = $_REQUEST['deleteAfter']*$_REQUEST['deleteAfter_unit'];
  		}
- 	}
--	if ($editFile && !$didFileReplace) {
--		$filegallib->replace_file($editFileId, $_REQUEST['name'][0], $_REQUEST['description'][0], $fileInfo['filename'], $fileInfo['data'], $fileInfo['filesize'], $fileInfo['filetype'], $fileInfo['user'], $fileInfo['path'], $_REQUEST['comment'][0], $gal_info, $didFileReplace, $_REQUEST['author'][0], $fileInfo['lastModif'], $fileInfo['lockedby']);
-+    if ($editFile && !$didFileReplace) {
-+        if ($_REQUEST['created_Year']) {
-+            $createdDate = $filegallib->make_time($_REQUEST["created_Hour"], $_REQUEST["created_Minute"], 0, $_REQUEST["created_Month"], $_REQUEST["created_Day"], $_REQUEST["created_Year"]);
-+            $filegallib->query('UPDATE tiki_files SET created = ' . $createdDate . ' WHERE fileId = ' . $editFileId);
-+        }
-+        $filegallib->replace_file($editFileId, $_REQUEST['name'][0], $_REQUEST['description'][0], $_REQUEST['filename'], $fileInfo['data'], $fileInfo['filesize'], $fileInfo['filetype'], $fileInfo['user'], $fileInfo['path'], $_REQUEST['comment'][0], $gal_info, $didFileReplace, $_REQUEST['author'][0], $fileInfo['lastModif'], $fileInfo['lockedby']);
-+        $pubeduclib->update_file_custom_fields($editFileId, $_REQUEST['subtitle'][0], $_REQUEST['credit'][0]);
+-		$filegallib->replace_file($editFileId, $_REQUEST['name'][0], $_REQUEST['description'][0], $fileInfo['filename'], $fileInfo['data'], $fileInfo['filesize'], $fileInfo['filetype'], $fileInfo['user'], $fileInfo['path'], $_REQUEST['comment'][0], $gal_info, $didFileReplace, $_REQUEST['author'][0], $fileInfo['lastModif'], $fileInfo['lockedby'], $deleteAfter);
++		if ($_REQUEST['created_Year']) {
++			$createdDate = $filegallib->make_time($_REQUEST["created_Hour"], $_REQUEST["created_Minute"], 0, $_REQUEST["created_Month"], $_REQUEST["created_Day"], $_REQUEST["created_Year"]);
++			$filegallib->query('UPDATE tiki_files SET created = ' . $createdDate . ' WHERE fileId = ' . $editFileId);
++		}
++		$filegallib->replace_file($editFileId, $_REQUEST['name'][0], $_REQUEST['description'][0], $_REQUEST['filename'], $fileInfo['data'], $fileInfo['filesize'], $fileInfo['filetype'], $fileInfo['user'], $fileInfo['path'], $_REQUEST['comment'][0], $gal_info, $didFileReplace, $_REQUEST['author'][0], $fileInfo['lastModif'], $fileInfo['lockedby'], $deleteAfter);
++		$pubeduclib->update_file_custom_fields($editFileId, $_REQUEST['subtitle'][0], $_REQUEST['credit'][0]);
  		$fileChangedMessage = tra('File update was successful') . ': ' . $_REQUEST['name'];
  		$smarty->assign('fileChangedMessage', $fileChangedMessage);
  		$cat_type = 'file';
-@@ -394,14 +405,14 @@
- 	}
- 	$temp_max = count($galleries["data"]);
- 	for ($i = 0; $i < $temp_max; $i++) {
--		if ($userlib->object_has_one_permission($galleries["data"][$i]["galleryId"], 'file gallery')) {
-+		if ($userlib->object_has_one_permission($galleries["data"][$i]["id"], 'file gallery')) {
- 			$galleries["data"][$i]["individual"] = 'y';
--			if ($userlib->object_has_permission($user, $galleries["data"][$i]["galleryId"], 'file gallery', 'tiki_p_upload_files')) {
-+			if ($userlib->object_has_permission($user, $galleries["data"][$i]["id"], 'file gallery', 'tiki_p_upload_files')) {
- 				$galleries["data"][$i]["individual_tiki_p_upload_files"] = 'y';
- 			} else {
- 				$galleries["data"][$i]["individual_tiki_p_upload_files"] = 'n';
- 			}
--			if ($tiki_p_admin == 'y' || $userlib->object_has_permission($user, $galleries["data"][$i]["galleryId"], 'file gallery', 'tiki_p_admin_file_galleries')) {
-+			if ($tiki_p_admin == 'y' || $userlib->object_has_permission($user, $galleries["data"][$i]["id"], 'file gallery', 'tiki_p_admin_file_galleries')) {
- 				$galleries["data"][$i]["individual_tiki_p_upload_files"] = 'y';
- 			}
- 		} else {
