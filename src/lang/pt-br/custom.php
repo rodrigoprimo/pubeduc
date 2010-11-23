@@ -162,7 +162,7 @@ $lang_custom = array(
 "First Page" => "Primeira página",
 "Previous Page" => "Página anterior",
 "Prev Page" => "Página anterior",
-"Page" => "página",
+"Page" => "Página",
 "Next Page" => "Próxima página",
 "Last Page" => "Última página",
 
