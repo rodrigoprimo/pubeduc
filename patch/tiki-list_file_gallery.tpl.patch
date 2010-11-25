@@ -40,7 +40,7 @@
  
  		{if $edit_mode eq 'y' or $dup_mode eq 'y'}
 -			{button _text="{tr}List Galleries{/tr}" href='?'}
-+			{button _text="{tr}List Galleries{/tr}" href='$base_url'}
++			{button _text="{tr}List Galleries{/tr}" href="$base_url"}
  		{/if}
  
  		{if $tiki_p_create_file_galleries eq 'y' and $edit_mode ne 'y'}
